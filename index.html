@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adham Kamel - Professional Web Developer Portfolio. Angular Developer, Frontend Engineer.">
+    <meta name="keywords" content="Adham Kamel, Web Developer, Angular, Portfolio, Frontend">
+    <meta name="author" content="Adham Kamel">
+    <title>Adham Kamel | Web Developer Portfolio</title>
+
+    <!-- ===== FAVICON - CHANGE THIS ===== -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+
+    <!-- ===== FONTS ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- ===== ICONS ===== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ===== STYLES ===== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== CUSTOM CURSOR ==================== -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- ==================== LOADING SCREEN ==================== -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-rings">
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+                <div class="ring ring-3"></div>
+            </div>
+            <h2 class="loader-text">
+                <span class="loader-letter" style="--i:0">A</span>
+                <span class="loader-letter" style="--i:1">D</span>
+                <span class="loader-letter" style="--i:2">H</span>
+                <span class="loader-letter" style="--i:3">A</span>
+                <span class="loader-letter" style="--i:4">M</span>
+                <span class="loader-space"></span>
+                <span class="loader-letter" style="--i:5">K</span>
+                <span class="loader-letter" style="--i:6">A</span>
+                <span class="loader-letter" style="--i:7">M</span>
+                <span class="loader-letter" style="--i:8">E</span>
+                <span class="loader-letter" style="--i:9">L</span>
+            </h2>
+            <div class="loader-bar">
+                <div class="loader-bar-fill"></div>
+            </div>
+            <p class="loader-subtitle">Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- ==================== PARTICLES BACKGROUND ==================== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>
+                <span class="logo-name">AK</span>
+                <span class="logo-bracket">/&gt;</span>
+            </a>
+
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#about" class="nav-link" data-section="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </a>
+                <a href="#skills" class="nav-link" data-section="skills">
+                    <i class="fas fa-code"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="#certificates" class="nav-link" data-section="certificates">
+                    <i class="fas fa-certificate"></i>
+                    <span>Certificates</span>
+                </a>
+                <a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+                <span class="toggle-bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MOBILE MENU ==================== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-bg"></div>
+        <div class="mobile-menu-content">
+            <a href="#home" class="mobile-link" data-index="1">
+                <span class="mobile-link-number">01</span>
+                <span class="mobile-link-text">Home</span>
+            </a>
+            <a href="#about" class="mobile-link" data-index="2">
+                <span class="mobile-link-number">02</span>
+                <span class="mobile-link-text">About</span>
+            </a>
+            <a href="#skills" class="mobile-link" data-index="3">
+                <span class="mobile-link-number">03</span>
+                <span class="mobile-link-text">Skills</span>
+            </a>
+            <a href="#projects" class="mobile-link" data-index="4">
+                <span class="mobile-link-number">04</span>
+                <span class="mobile-link-text">Projects</span>
+            </a>
+            <a href="#certificates" class="mobile-link" data-index="5">
+                <span class="mobile-link-number">05</span>
+                <span class="mobile-link-text">Certificates</span>
+            </a>
+            <a href="#contact" class="mobile-link" data-index="6">
+                <span class="mobile-link-number">06</span>
+                <span class="mobile-link-text">Contact</span>
+            </a>
+            <div class="mobile-social">
+                <!-- ======= CHANGE YOUR SOCIAL LINKS HERE ======= -->
+                <a href="https://github.com/adhamkame" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/adham-kamel-6076112a0" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.facebook.com/share/1KMDm3jAXs/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <!-- ======= END SOCIAL LINKS ======= -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-bg-elements">
+            <div class="hero-glow glow-1"></div>
+            <div class="hero-glow glow-2"></div>
+            <div class="hero-grid-bg"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-tag" data-aos="fade-up">
+                    <span class="tag-dot"></span>
+                    <span class="tag-text">Available for work</span>
+                </div>
+
+                <div class="hero-greeting">
+                    <div class="greeting-line"></div>
+                    <span class="greeting-text">Hello World, I'm</span>
+                </div>
+
+                <h1 class="hero-name">
+                    <span class="name-first">Adham</span>
+                    <span class="name-last">Kamel</span>
+                </h1>
+
+                <div class="hero-title">
+                    <span class="title-caret">&gt;_</span>
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+
+                <p class="hero-description">
+                    A passionate <span class="highlight-text">17-year-old</span> web developer
+                    specializing in modern front-end technologies. I craft beautiful,
+                    responsive, and high-performance digital experiences that bring ideas to life.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Projects Done</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="8">0</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label">Years Learning</span>
+                    </div>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <span class="btn-text">View My Work</span>
+                        <span class="btn-icon"><i class="fas fa-arrow-right"></i></span>
+                        <span class="btn-glow"></span>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span class="btn-text">Let's Talk</span>
+                        <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                    </a>
+                </div>
+
+                <div class="hero-social">
+                    <!-- ======= CHANGE YOUR SOCIAL LINKS HERE ======= -->
+                    <a href="https://github.com/adhamkame" target="_blank" class="social-link" data-tooltip="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adham-kamel-6076112a0" target="_blank" class="social-link" data-tooltip="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1KMDm3jAXs/" target="_blank" class="social-link" data-tooltip="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://wa.me/201204407183" target="_blank" class="social-link" data-tooltip="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <!-- ======= END SOCIAL LINKS ======= -->
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-wrapper">
+                    <!-- Orbiting elements -->
+                    <div class="orbit orbit-1">
+                        <div class="orbit-dot"></div>
+                    </div>
+                    <div class="orbit orbit-2">
+                        <div class="orbit-dot"></div>
+                    </div>
+                    <div class="orbit orbit-3">
+                        <div class="orbit-dot"></div>
+                    </div>
+
+                    <!-- Profile Image -->
+                    <div class="profile-container">
+                        <div class="profile-border"></div>
+                        <div class="profile-glow"></div>
+                        <img src="images/photo_2026-09-06_19-38-17.jpg" alt="Adham Kamel - Web Developer" class="profile-img" id="profile-img">
+                    </div>
+
+                    <!-- Floating Tech Badges -->
+                    <div class="float-badge badge-angular">
+                        <i class="fab fa-angular"></i>
+                        <span>Angular</span>
+                    </div>
+                    <div class="float-badge badge-js">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="float-badge badge-css">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="float-badge badge-html">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                </div>
+
+                <!-- Code snippet decoration -->
+                <div class="code-snippet">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">developer.ts</span>
+                    </div>
+                    <div class="code-body">
+                        <code>
+                            <span class="code-keyword">const</span> <span class="code-var">developer</span> = {<br>
+                            &nbsp;&nbsp;<span class="code-prop">name</span>: <span class="code-string">"Adham"</span>,<br>
+                            &nbsp;&nbsp;<span class="code-prop">skills</span>: [<span class="code-string">"Angular"</span>],<br>
+                            &nbsp;&nbsp;<span class="code-prop">passion</span>: <span class="code-bool">true</span>,<br>
+                            &nbsp;&nbsp;<span class="code-prop">age</span>: <span class="code-num">17</span><br>
+                            };
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">01.</span>
+                <span class="section-subtitle">Get To Know</span>
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <div class="title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-bar"></span>
+                    <span class="line-dot"></span>
+                </div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-visual" data-animate="fade-right">
+                    <div class="about-image-wrapper">
+                        <!-- ======= CHANGE YOUR ABOUT IMAGE ======= -->
+                        <img src="images/WhatsApp Image 2026-09-17 at 2.54.48 PM.jpeg" alt="Adham Kamel" class="about-img">
+                        <!-- ======= END ABOUT IMAGE ======= -->
+                        <div class="about-image-border"></div>
+                        <div class="about-image-dots"></div>
+                    </div>
+                    <div class="about-experience-card">
+                        <div class="exp-icon"><i class="fas fa-rocket"></i></div>
+                        <span class="exp-num" data-count="3">0</span>
+                        <span class="exp-label">Years of<br>Learning</span>
+                    </div>
+                </div>
+
+                <div class="about-info" data-animate="fade-left">
+                    <div class="about-highlight-cards">
+                        <div class="highlight-card">
+                            <div class="hc-icon"><i class="fas fa-code"></i></div>
+                            <h4>Web Development</h4>
+                            <p>Building responsive & dynamic web applications</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="hc-icon"><i class="fas fa-certificate"></i></div>
+                            <h4>Certified Developer</h4>
+                            <p>Multiple certifications in web technologies</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="hc-icon"><i class="fas fa-bolt"></i></div>
+                            <h4>Fast Learner</h4>
+                            <p>Always exploring new frameworks & tools</p>
+                        </div>
+                    </div>
+
+                    <div class="about-text">
+                        <p>
+                            I'm <strong>Adham Kamel</strong>, a <span class="gradient-text">17-year-old</span>
+                            ambitious web developer based in Egypt. My journey into programming started
+                            from pure curiosity about how the web works, and quickly turned into an
+                            unstoppable passion for creating amazing digital experiences.
+                        </p>
+                        <p>
+                            Despite my young age, I've earned <strong>multiple certifications</strong>
+                            in web development and have built numerous projects that showcase my
+                            skills and creativity. I specialize in <strong>Angular</strong> and
+                            modern frontend development, always pushing boundaries and learning
+                            something new every day.
+                        </p>
+                        <p>
+                            I believe that age is just a number — what matters is <strong>dedication,
+                            creativity, and the hunger to learn</strong>. Every line of code I write
+                            is a step towards mastering the craft and building solutions that make
+                            a real impact.
+                        </p>
+                    </div>
+
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-user"></i></span>
+                            <span class="detail-label">Name:</span>
+                            <span class="detail-value">Adham Kamel</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-birthday-cake"></i></span>
+                            <span class="detail-label">Age:</span>
+                            <!-- ======= CHANGE YOUR AGE ======= -->
+                            <span class="detail-value">17 Years Old</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="detail-label">Email:</span>
+                            <!-- ======= CHANGE YOUR EMAIL ======= -->
+                            <span class="detail-value">your.email@example.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="detail-label">Location:</span>
+                            <!-- ======= CHANGE YOUR LOCATION ======= -->
+                            <span class="detail-value">Egypt</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-phone"></i></span>
+                            <span class="detail-label">Phone:</span>
+                            <!-- ======= CHANGE YOUR PHONE ======= -->
+                            <span class="detail-value">+20 XXX XXX XXXX</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon"><i class="fas fa-globe"></i></span>
+                            <span class="detail-label">Languages:</span>
+                            <span class="detail-value">Arabic, English</span>
+                        </div>
+                    </div>
+
+                    <div class="about-actions">
+                        <!-- ======= CHANGE YOUR CV LINK ======= -->
+                        <a href="files/Adham_Kamel_CV_2.pdf" class="btn btn-primary" download>
+                            <span class="btn-text">Download CV</span>
+                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+                            <span class="btn-glow"></span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span class="btn-text">Hire Me</span>
+                            <span class="btn-icon"><i class="fas fa-handshake"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">02.</span>
+                <span class="section-subtitle">What I Know</span>
+                <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+                <div class="title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-bar"></span>
+                    <span class="line-dot"></span>
+                </div>
+            </div>
+
+            <div class="skills-grid" data-animate="fade-up">
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML5</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="95%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS3 / SASS</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="90%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="85%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <h3>Angular</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="80%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-bootstrap"></i>
+                    </div>
+                    <h3>Bootstrap</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="88%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor"><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>
+                    </div>
+                    <h3>TypeScript</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="75%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-sass"></i>
+                    </div>
+                    <h3>SASS/SCSS</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="82%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">82%</span>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-card-bg"></div>
+                    <div class="skill-icon-wrapper">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3>Git & GitHub</h3>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar">
+                            <div class="skill-bar-fill" data-width="85%">
+                                <span class="skill-bar-glow"></span>
+                            </div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools Section -->
+            <div class="tools-section" data-animate="fade-up">
+                <h3 class="tools-title">Tools & Technologies I Use</h3>
+                <div class="tools-marquee">
+                    <div class="tools-track">
+                        <span class="tool-item">VS Code</span>
+                        <span class="tool-item">Angular CLI</span>
+                        <span class="tool-item">npm</span>
+                        <span class="tool-item">Figma</span>
+                        <span class="tool-item">Chrome DevTools</span>
+                        <span class="tool-item">Postman</span>
+                        <span class="tool-item">GitHub</span>
+                        <span class="tool-item">Terminal</span>
+                        <span class="tool-item">Responsive Design</span>
+                        <span class="tool-item">REST APIs</span>
+                        <!-- Duplicate for seamless loop -->
+                        <span class="tool-item">VS Code</span>
+                        <span class="tool-item">Angular CLI</span>
+                        <span class="tool-item">npm</span>
+                        <span class="tool-item">Figma</span>
+                        <span class="tool-item">Chrome DevTools</span>
+                        <span class="tool-item">Postman</span>
+                        <span class="tool-item">GitHub</span>
+                        <span class="tool-item">Terminal</span>
+                        <span class="tool-item">Responsive Design</span>
+                        <span class="tool-item">REST APIs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">03.</span>
+                <span class="section-subtitle">What I've Built</span>
+                <h2 class="section-title">My <span class="gradient-text">Projects</span></h2>
+                <div class="title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-bar"></span>
+                    <span class="line-dot"></span>
+                </div>
+            </div>
+
+            <div class="projects-grid" data-animate="fade-up">
+
+                <!-- ======= PROJECT 1 - CHANGE ALL INFO ======= -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <!-- Change: Put your project screenshot in assets/images/ -->
+                        <img src="images/nexa.jpeg" alt="Project 1" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <!-- ======= CHANGE PROJECT LIVE LINK ======= -->
+                                <a href="https://nexatel.vercel.app/" target="_blank" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <!-- ======= CHANGE PROJECT GITHUB LINK ======= -->
+                                <a href="" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-tag">Featured</div>
+                    </div>
+                    <div class="project-details">
+                        <!-- ======= CHANGE PROJECT TITLE ======= -->
+                        <h3 class="project-title">Nexatel</h3>
+                        <!-- ======= CHANGE PROJECT DESCRIPTION ======= -->
+                        <p class="project-desc">Nexatel is a modern telecommunications web platform modeled after sites like AT&T, offering internet, mobile, and digital communication services through a sleek, user-friendly interface.</p>
+                        <div class="project-tech-stack">
+                            <!-- ======= CHANGE TECH STACK ======= -->
+                            <span>React</span>
+                            <span>TypeScript</span>
+                            <span>CSS3</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- ======= END PROJECT 1 ======= -->
+
+                <!-- ======= PROJECT 2 - CHANGE ALL INFO ======= -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/datado.jpeg" alt="Project 2" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://datado.vercel.app/" target="_blank" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Datado</h3>
+                        <p class="project-desc">This website is built using React and includes features for storing personal data, taking notes, converting currencies, and saving images—offering tools that assist with daily life.</p>
+                        <div class="project-tech-stack">
+                            <span>HTML5</span>
+                            <span>JavaScript</span>
+                            <span>Raect</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- ======= END PROJECT 2 ======= -->
+
+                <!-- ======= PROJECT 3 - CHANGE ALL INFO ======= -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/Currency-Converter.jpg" alt="Project 3" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://adhamkame.github.io/Currency-Converter/" target="_blank" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Currency-Converter</h3>
+                        <p class="project-desc">This is a website that converts all existing world currencies using an API.</p>
+                        <div class="project-tech-stack">
+                            <span>HTMl5</span>
+                            <span>Bootstrap</span>
+                            <span>REST API</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- ======= END PROJECT 3 ======= -->
+
+                <!-- ======= PROJECT 4 - CHANGE ALL INFO ======= -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/travellaa.jpeg" alt="Project 4" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://adhamkame.github.io/Travellaa/" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_PROJECT_4_REPO" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Travella</h3>
+                        <p class="project-desc">This is a travel-themed website I created to showcase my web design skills.</p>
+                        <div class="project-tech-stack">
+                            <span>Bootstrap</span>
+                            <span>CSS3</span>
+                            <span>HTML5</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- ======= END PROJECT 4 ======= -->
+
+                <!-- ======= PROJECT 5 - CHANGE ALL INFO ======= -->
+ <!--            <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a2e/7c3aed?text=Project+5" alt="Project 5" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://YOUR_PROJECT_5_LIVE_LINK.com" target="_blank" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_PROJECT_5_REPO" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Project Name 5</h3>
+                        <p class="project-desc">Write a short description of what this project does and the problem it solves.</p>
+                        <div class="project-tech-stack">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </article> -->   
+               <!-- ======= END PROJECT 5 ======= -->
+
+                <!-- ======= PROJECT 6 - CHANGE ALL INFO ======= -->
+            <!--   <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/0a0a2e/ff006e?text=Project+6" alt="Project 6" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="https://YOUR_PROJECT_6_LIVE_LINK.com" target="_blank" class="project-btn" title="Live Demo">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/YOUR_GITHUB_USERNAME/YOUR_PROJECT_6_REPO" target="_blank" class="project-btn" title="Source Code">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <h3 class="project-title">Project Name 6</h3>
+                        <p class="project-desc">Write a short description of what this project does and the problem it solves.</p>
+                        <div class="project-tech-stack">
+                            <span>HTML5</span>
+                            <span>SASS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article> --> 
+                <!-- ======= END PROJECT 6 ======= -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATES SECTION ==================== -->
+    <section class="section certificates-section" id="certificates">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">04.</span>
+                <span class="section-subtitle">My Achievements</span>
+                <h2 class="section-title">Certificates & <span class="gradient-text">Awards</span></h2>
+                <div class="title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-bar"></span>
+                    <span class="line-dot"></span>
+                </div>
+            </div>
+
+            <div class="certificates-grid" data-animate="fade-up">
+
+                <!-- ======= CERTIFICATE 1 - CHANGE ALL INFO ======= -->
+                <div class="cert-card">
+                    <div class="cert-card-inner">
+                        <div class="cert-glow"></div>
+                        <div class="cert-icon"><i class="fas fa-award"></i></div>
+                        <h3 class="cert-title">Certificate 1</h3>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Mec Academy</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> 2025</p>
+                        <!-- ======= CHANGE CERTIFICATE LINK ======= -->
+                        <a href="images/شهادة 1.jpeg" target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ======= END CERTIFICATE 1 ======= -->
+
+                <!-- ======= CERTIFICATE 2 - CHANGE ALL INFO ======= -->
+                <div class="cert-card">
+                    <div class="cert-card-inner">
+                        <div class="cert-glow"></div>
+                        <div class="cert-icon"><i class="fas fa-award"></i></div>
+                        <h3 class="cert-title">Certificate 2</h3>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> ENG|Moaz Mahmoud</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> 2023</p>
+                        <a href="images/شهادة 2.jpeg" target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ======= END CERTIFICATE 2 ======= -->
+
+                <!-- ======= CERTIFICATE 3 - CHANGE ALL INFO ======= -->
+                <div class="cert-card">
+                    <div class="cert-card-inner">
+                        <div class="cert-glow"></div>
+                        <div class="cert-icon"><i class="fas fa-award"></i></div>
+                        <h3 class="cert-title">Certificate Name 3</h3>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Digital Egypt Cubs Initiative</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> 2025</p>
+                        <a href="images/شهادة 3.jpg" target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- ======= END CERTIFICATE 3 ======= -->
+
+                <!-- ======= CERTIFICATE 4 - CHANGE ALL INFO ======= -->
+             <!--  <div class="cert-card">
+                    <div class="cert-card-inner">
+                        <div class="cert-glow"></div>
+                        <div class="cert-icon"><i class="fas fa-award"></i></div>
+                        <h3 class="cert-title">Certificate Name 4</h3>
+                        <p class="cert-issuer"><i class="fas fa-building"></i> Issuing Organization</p>
+                        <p class="cert-date"><i class="fas fa-calendar"></i> 2023</p>
+                        <a href="YOUR_CERTIFICATE_4_LINK" target="_blank" class="cert-link">
+                            View Certificate <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div> --> 
+                <!-- ======= END CERTIFICATE 4 ======= -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-number">05.</span>
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+                <div class="title-line">
+                    <span class="line-dot"></span>
+                    <span class="line-bar"></span>
+                    <span class="line-dot"></span>
+                </div>
+                <p class="section-description">
+                    Have a project in mind or just want to chat? Feel free to reach out!
+                    I'm always open to new opportunities and collaborations.
+                </p>
+            </div>
+
+            <div class="contact-content" data-animate="fade-up">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="info-card-icon"><i class="fas fa-envelope"></i></div>
+                        <h4>Email Me</h4>
+                        <!-- ======= CHANGE YOUR EMAIL ======= -->
+                        <a href="mailto:adhamkamel2009@gmail.com">adhamkamel2009@gmail.com</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-card-icon"><i class="fas fa-phone-alt"></i></div>
+                        <h4>Call Me</h4>
+                        <!-- ======= CHANGE YOUR PHONE ======= -->
+                        <a href="tel:+201204407183">+20 120 440 7183</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-card-icon"><i class="fab fa-whatsapp"></i></div>
+                        <h4>WhatsApp</h4>
+                        <!-- ======= CHANGE YOUR WHATSAPP ======= -->
+                        <a href="https://wa.me/201204407183" target="_blank">+20 120 440 7183</a>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h4>Location</h4>
+                        <!-- ======= CHANGE YOUR LOCATION ======= -->
+                        <p>Egypt</p>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <input type="text" id="form-name" name="name" required autocomplete="name">
+                                    <label for="form-name"><i class="fas fa-user"></i> Your Name</label>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-field">
+                                    <input type="email" id="form-email" name="email" required autocomplete="email">
+                                    <label for="form-email"><i class="fas fa-envelope"></i> Your Email</label>
+                                    <div class="input-line"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-field">
+                                <input type="text" id="form-subject" name="subject" required>
+                                <label for="form-subject"><i class="fas fa-tag"></i> Subject</label>
+                                <div class="input-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-field">
+                                <textarea id="form-message" name="message" rows="5" required></textarea>
+                                <label for="form-message"><i class="fas fa-comment-dots"></i> Your Message</label>
+                                <div class="input-line"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                            <span class="btn-glow"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+        <div class="footer-top-line"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo">
+                        <span class="logo-bracket">&lt;</span>
+                        <span class="logo-name">AK</span>
+                        <span class="logo-bracket">/&gt;</span>
+                    </a>
+                    <p class="footer-tagline">Crafting digital experiences with passion and precision.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <div class="footer-contact-info">
+                    <h4>Contact</h4>
+                    <!-- ======= CHANGE YOUR EMAIL ======= -->
+                    <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i> adhamkamel2009@gmail.com</a>
+                    <!-- ======= CHANGE YOUR PHONE ======= -->
+                    <a href="tel:+20XXXXXXXXXX"><i class="fas fa-phone"></i> +20 120 440 7183</a>
+                    <!-- ======= CHANGE YOUR LOCATION ======= -->
+                    <p><i class="fas fa-map-marker-alt"></i> Egypt,Cairo </p>
+                </div>
+
+                <div class="footer-social-section">
+                    <h4>Follow Me</h4>
+                    <div class="footer-social-links">
+                        <!-- ======= CHANGE YOUR SOCIAL LINKS ======= -->
+                        <a href="https://github.com/adhamkame" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/adham-kamel-6076112a0" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/1KMDm3jAXs/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/201204407183" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <!-- ======= END SOCIAL LINKS ======= -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p>
+                    <span class="footer-heart">❤</span>
+                    Designed & Built by <strong>Adham Kamel</strong>
+                </p>
+                <p class="footer-copyright">&copy; <span id="current-year"></span> All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP ==================== -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+        <svg class="back-to-top-circle" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" />
+        </svg>
+    </button>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="script.js"></script>
+</body>
+</html>
